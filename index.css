@@ -1,0 +1,155 @@
+/* ---------- CSS RESET ---------- */
+/* box-sizing rules */
+*, ::after, ::before  {
+  box-sizing: border-box;
+}
+
+/* remove defaults margins */
+body, h1, h2, p {
+  margin: 0;
+}
+
+/* body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.3;
+}
+
+/* headings line-height */
+h1, h2 {
+  line-height: .8;
+}
+
+/* text-wrap */
+h1, h2, p {
+  text-wrap: balance;
+}
+
+/* responsive img */
+img, picture {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- CSS VARIABLE ---------- */
+:root {
+  /* ----- color system ----- */
+  /* primary */
+  --clr-veryDarkMagenta: hsl(300, 43%, 22%); 
+  --clr-softPink: hsla(333, 80%, 67%, 0.453);
+  /* neutral */
+  --clr-darkGrayishMagenta: hsl(303, 10%, 53%);
+  --clr-lightGrayishMagenta: hsl(300, 24%, 96%);
+  --clr-white: hsl(0, 0%, 100%);
+  
+  /* ----- typography ----- */
+  --ff-body: 'League Spartan', sans-serif;
+  --fs-body: .9735rem;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  
+}
+
+/* ---------- CHALLENGE STYLING ---------- */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  letter-spacing: .00625rem;
+}
+
+/* ----- patterns background ----- */
+.bg-pattern-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.bg-pattern-bottom {border: 1px solid red;
+  position: absolute;
+  /* top: 0; */
+  /* bottom: 1%; */
+  /* right: 0; */
+  /* left: 0; */
+  z-index: -1;
+}
+
+/* ----- component styling -----*/
+.wrapper {
+  width: 85%;
+  margin: 0rem auto;
+}
+
+/* introduction section */
+.content {
+  text-align: center;
+  margin-block: 4rem 2rem;
+}
+
+.content__heading {
+  color: var(--clr-veryDarkMagenta);
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.content__text {
+  color: var(--clr-darkGrayishMagenta);
+}
+
+/* rated stars section */
+.star-wrapper {
+  background: var(--clr-lightGrayishMagenta);
+  text-align: center;
+  padding: .8em;
+  border-radius: 8px;
+}
+
+.star__heading {
+  color: var(--clr-veryDarkMagenta);
+  font-weight: var(--fw-700);
+  margin-top: .25rem;
+}
+
+.star-wrapper + .star-wrapper {
+  margin-top: 0.75rem;
+}
+
+/* reviews section */
+.review-card {
+  background: var(--clr-veryDarkMagenta);
+  color: var(--clr-white);
+  padding: 2em;
+  border-radius: 8px;
+}
+
+.card__img {
+  width: 2rem;
+  /* height: 3rem; */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review__title {
+  font-size: var(--fs-body);
+}
+
+.review-card + .review-card {
+  margin-top: .75rem;
+}
+
+
+
+.accent-title {
+  color: var(--clr-softPink);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  text-decoration: none;
+  color: var(--clr-softPink);
+}
