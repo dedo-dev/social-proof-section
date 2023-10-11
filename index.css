@@ -67,13 +67,11 @@ body {
   z-index: -1;
 }
 
-.bg-pattern-bottom {border: 1px solid red;
+.bg-pattern-bottom {
   position: absolute;
-  /* top: 100%; */
-  /* bottom: 1rem; */
-  /* right: 0; */
-  /* left: 0; */
-  z-index: 1;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 /* ----- component styling -----*/
@@ -90,7 +88,6 @@ body {
 
 .content__heading {
   color: var(--clr-veryDarkMagenta);
-  /* width: 80%; */
   max-width: 12ch;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -98,26 +95,34 @@ body {
 
 .content__text {
   color: var(--clr-darkGrayishMagenta);
+  max-width: 44ch;
 }
 
 /* rated stars section */
 .rates {
   margin-block: 2.5rem;
 }
-.star-wrapper {
+.rate-wrapper {
   background: var(--clr-lightGrayishMagenta);
   text-align: center;
   padding: .8em;
   border-radius: 8px;
 }
 
-.star__heading {
-  color: var(--clr-veryDarkMagenta);
-  font-weight: var(--fw-700);
-  margin-top: .25rem;
+.rate__stars {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.star-wrapper + .star-wrapper {
+.rate__heading {
+  color: var(--clr-veryDarkMagenta);
+  font-weight: var(--fw-700);
+  margin-top: .65rem;
+}
+
+.rate-wrapper + .rate-wrapper {
   margin-top: 0.75rem;
 }
 
@@ -147,7 +152,7 @@ body {
   font-size: var(--fs-body);
 }
 
-.verified {
+.buyer__heading--verified {
   color: var(--clr-softPink);
   opacity: .67;
   font-weight: var(--fw-500);
@@ -162,10 +167,6 @@ body {
   margin-top: .75rem;
 }
 
-
-
-
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -173,4 +174,58 @@ body {
 .attribution a {
   text-decoration: none;
   color: var(--clr-softPink);
+}
+
+/* ----- media-query large screen -----*/
+@media (min-width: 56.25em) {
+  /* grid setup */
+  .wrapper {
+    max-width: 90rem;
+    padding: 4em;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-template-areas: 
+        "c  s  s"
+        "r r r";
+  }
+
+  .content {
+    grid-area: c;
+    text-align: left;
+
+  }
+
+  .rates {
+    grid-area: s;
+  }
+
+  .reviews {
+    grid-area: r;
+  }
+
+  /* ------ component styling ----- */
+
+  /* content section */
+  .content__heading {
+    font-size: 3rem;
+    margin-inline: 0;
+    margin-bottom: 2rem;
+  }
+
+  /* reviews section */
+  .reviews {
+    display: flex;
+    gap: 2rem
+    ;
+  }
+  .buyer-card + .buyer-card {
+    margin-top: 0;
+  }
+
+  .buyer-card--one {
+    margin-top: -5rem;
+    /* grid-area: r1; */
+  }
+
 }
