@@ -5,7 +5,7 @@
 }
 
 /* remove defaults margins */
-body, h1, h2, p {
+body, h1, h2, h3, p, figure, blockquote {
   margin: 0;
 }
 
@@ -53,25 +53,14 @@ h1, h2, p {
 
 /* ---------- CHALLENGE STYLING ---------- */
 body {
+  background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top left, bottom right;
   font-family: var(--ff-body);
   font-size: var(--fs-body);
   font-weight: var(--fw-500);
   letter-spacing: .00625rem;
-}
-
-/* ----- patterns background ----- */
-.bg-pattern-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.bg-pattern-bottom {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
 }
 
 /* ----- component styling -----*/
@@ -81,52 +70,52 @@ body {
   margin: 4rem auto;
 }
 
-/* introduction section */
-.content {
+/* intro component */
+.intro {
   text-align: center;
 }
 
-.content__heading {
+.intro__heading {
   color: var(--clr-veryDarkMagenta);
   max-width: 12ch;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
 
-.content__text {
+.intro__text {
   color: var(--clr-darkGrayishMagenta);
   max-width: 44ch;
 }
 
-/* rated stars section */
+/* rating component */
 .rates {
   margin-block: 2.5rem;
 }
-.rate-wrapper {
+.rating-wrapper {
   background: var(--clr-lightGrayishMagenta);
   text-align: center;
   padding: .8em;
   border-radius: 8px;
 }
 
-.rate__stars {
+.rating__stars {
   display: flex;
   gap: .5rem;
   align-items: center;
   justify-content: center;
 }
 
-.rate__heading {
+.rating__heading {
   color: var(--clr-veryDarkMagenta);
   font-weight: var(--fw-700);
   margin-top: .65rem;
 }
 
-.rate-wrapper + .rate-wrapper {
+.rating-wrapper + .rating-wrapper {
   margin-top: 0.75rem;
 }
 
-/* reviews section */
+/* reviews component */
 /* .reviews {} */
 
 .buyer-card {
@@ -178,42 +167,46 @@ body {
 
 /* ----- media-query large screen -----*/
 @media (min-width: 56.25em) {
+  /* bg-pattern-desktop */
+  body {
+    background-image: url("images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top left, bottom right;
+  }
   /* grid setup */
   .wrapper {
     max-width: 90rem;
     padding: 4em;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(2, 1fr) / repeat(3, 1fr);
-    grid-template-areas: 
-        "c  s  s"
-        "r r r";
+    grid-template-columns: repeat(2, 1fr) / repeat(2, 1fr);
   }
 
-  .content {
-    grid-area: c;
+  .intro {
+    /* grid-area: i; */
     text-align: left;
 
   }
 
-  .rates {
+  /* .rates {
     grid-area: s;
-  }
+  } */
 
   .reviews {
-    grid-area: r;
+    grid-column: span 2;
   }
 
   /* ------ component styling ----- */
 
-  /* content section */
-  .content__heading {
+  /* content component */
+  .intro__heading {
     font-size: 3rem;
     margin-inline: 0;
     margin-bottom: 2rem;
   }
 
-  /* reviews section */
+  /* reviews component */
   .reviews {
     display: flex;
     gap: 2rem
@@ -222,10 +215,10 @@ body {
   .buyer-card + .buyer-card {
     margin-top: 0;
   }
-
+/* 
   .buyer-card--one {
     margin-top: -5rem;
-    /* grid-area: r1; */
-  }
+    grid-area: r1;
+  } */
 
 }
