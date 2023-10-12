@@ -16,7 +16,7 @@ body {
 }
 
 /* headings line-height */
-h1, h2 {
+h1, h2, h3 {
   line-height: .8;
 }
 
@@ -26,10 +26,10 @@ h1, h2, p {
 }
 
 /* responsive img */
-/* img, picture {
+img, picture {
   width: 100%;
   display: block;
-} */
+} 
 
 /* ---------- CSS VARIABLE ---------- */
 :root {
@@ -91,6 +91,7 @@ body {
 .rates {
   margin-block: 2.5rem;
 }
+
 .rating-wrapper {
   background: var(--clr-lightGrayishMagenta);
   text-align: center;
@@ -116,7 +117,6 @@ body {
 }
 
 /* reviews component */
-/* .reviews {} */
 
 .buyer-card {
   background: var(--clr-veryDarkMagenta);
@@ -167,31 +167,31 @@ body {
 
 /* ----- media-query large screen -----*/
 @media (min-width: 56.25em) {
+  
   /* bg-pattern-desktop */
   body {
+    display: grid;
+    place-content: center;
     background-image: url("images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: top left, bottom right;
   }
+
   /* grid setup */
   .wrapper {
-    max-width: 90rem;
-    padding: 4em;
+    width: 100%;
+    max-width: 70rem;
+    /* margin: 1rem; */
+    /* padding: 3em; */
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr) / repeat(2, 1fr);
   }
 
   .intro {
-    /* grid-area: i; */
     text-align: left;
-
   }
-
-  /* .rates {
-    grid-area: s;
-  } */
 
   .reviews {
     grid-column: span 2;
@@ -206,19 +206,50 @@ body {
     margin-bottom: 2rem;
   }
 
+  /* rating content */
+  .rating-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 25rem;
+  }
+
+  .rating-wrapper:nth-child(2) {
+    transform: translateX(3rem);
+  }
+
+  .rating-wrapper:nth-child(3) {
+    transform: translateX(6rem);
+  }
+
+  .rating__stars {
+    margin-left: 1rem;
+  }
+
+  .rating__heading {
+    margin-top: 0;
+  }
+
   /* reviews component */
   .reviews {
     display: flex;
-    gap: 2rem
-    ;
+    gap: 1rem;
+    margin-top: 2rem;
   }
+
   .buyer-card + .buyer-card {
     margin-top: 0;
+    transform: translateY(1rem);
   }
-/* 
-  .buyer-card--one {
-    margin-top: -5rem;
-    grid-area: r1;
-  } */
 
+  .buyer-card:nth-child(3) {
+    transform: translateY(2rem);
+  }
+  
+  .buyer__review {
+    max-width: 31ch;
+  }
+
+  .attribution {
+    font-size: var(--fs-body);
+  }
 }
