@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/social-proof-section-a-mix-of-css-grid-and-flexbox-mobile-first-bem-h6TV9gSAq1
 - Live Site URL: https://dedo-dev.github.io/social-proof-section/
 
 ## My process
