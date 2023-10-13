@@ -209,8 +209,9 @@ body {
   /* rating content */
   .rating-wrapper {
     display: flex;
+    padding: 1em;
     gap: 2rem;
-    max-width: 25rem;
+    max-width: 26.8rem;
   }
 
   .rating-wrapper:nth-child(2) {
@@ -232,7 +233,7 @@ body {
   /* reviews component */
   .reviews {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 2rem;
   }
 
